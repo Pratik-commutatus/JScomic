@@ -12,29 +12,46 @@
     <script>
 
         var storage = [];
-
-        function uniqueNum() {
-
-
-            while (storage.length <= 10) {
-                var randomNum = Math.floor((Math.random() * 10) + 1);
-                console.log(randomNum);
-                if(storage.indexOf(randomNum)===-1){
-                    storage.push(randomNum);
-                    console.log(storage);
-                    return randomNum;
-                }
-                
-            }
-            
+        var storage2 = [];
 
 
 
-        }
+
         function generate() {
 
-           
-            const fetchPromise = fetch(`https://xkcd.now.sh/?comic=${uniqueNum()}`);
+
+
+
+            while (true) {
+                var randomNum = Math.floor((Math.random() * 10) + 1);
+
+
+
+                if(storage.length>=10){
+                    break;
+                }
+
+
+                if ((storage.indexOf(randomNum) === -1)) {
+                    storage.push(randomNum);
+                    break;
+                }
+                
+                
+            }
+
+            localStorage.setItem("uniqueString", JSON.stringify(storage));
+
+
+
+            var string = localStorage.getItem("uniqueString");
+            storage = JSON.parse(string);
+
+
+
+
+
+            const fetchPromise = fetch(`https://xkcd.now.sh/?comic=${randomNum}`);
             fetchPromise.then(response => {
                 return response.json();
             }).then(input => {
@@ -43,7 +60,7 @@
                 console.log(img);
             });
 
-            
+
 
 
         };

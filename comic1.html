@@ -9,65 +9,9 @@
 </head>
 
 <body>
-    <script>
+    <script src="comic.js">
 
-        var storage = [];
-        var storage2 = [];
-
-
-
-
-        function generate() {
-
-
-
-
-            while (true) {
-                var randomNum = Math.floor((Math.random() * 10) + 1);
-
-
-
-                if(storage.length>=10){
-                    break;
-                }
-
-
-                if ((storage.indexOf(randomNum) === -1)) {
-                    storage.push(randomNum);
-                    break;
-                }
-                
-                
-            }
-
-            localStorage.setItem("uniqueString", JSON.stringify(storage));
-
-
-
-            var string = localStorage.getItem("uniqueString");
-            storage = JSON.parse(string);
-
-
-
-
-
-            const fetchPromise = fetch(`https://xkcd.now.sh/?comic=${randomNum}`);
-            fetchPromise.then(response => {
-                return response.json();
-            }).then(input => {
-                var img = input.img;
-                document.getElementById('divimage').innerHTML = `<img src="${img}">`;
-                console.log(img);
-            });
-
-
-
-
-        };
-
-
-
-
+        
     </script>
 
 
@@ -80,8 +24,8 @@
     <nav class="navbar">
         <div class="top-menu">
             <div class="logo"></div>
-            <div class="generator">GENERATOR</div>
-            <div class="archive">ARCHIVE</div>
+            <a href="comic1.html"><div class="generator">GENERATOR</div></a>
+            <a href="archive.html"><div class="archive">ARCHIVE</div></a>
 
         </div>
     </nav>

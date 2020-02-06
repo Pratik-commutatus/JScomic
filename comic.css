@@ -40,9 +40,12 @@ body{
 .generator{ 
     flex: 1;
     margin-left: 40px;
+    color: white;
 }
 .archive{
     flex: 1;
+    color: white;
+    margin-left: 40px;
 }
 
 .maincontent{
@@ -64,4 +67,26 @@ body{
     margin: 80px;
     border-radius: 5px;
     
+}
+
+.logbox{
+    width: 60%;
+    border: 1px solid black;
+    height: 120px;
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.title{
+    height: 100%;
+    flex: 2;
+}
+.timestamp{
+    height: 100%;
+    flex: 1;
+    border-left: 1px solid black;
+
 }

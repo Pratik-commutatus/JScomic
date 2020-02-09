@@ -8,12 +8,8 @@
     <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
 </head>
 
-<body>
-    <script src="comic.js">
-
-        
-    </script>
-
+<body onscroll="check()" onload="generate()">
+    
 
 
 
@@ -29,10 +25,19 @@
 
         </div>
     </nav>
-    <div class="maincontent">
-        <div> <button id="button" onclick="generate()">GENERATE</button></div>
-        <div id="divimage"></div>
+    <div class="main-content" id="firstpage">
+        <!-- <div> <button id="button" onclick="generate()">GENERATE</button></div> -->
+        
+        <div class="loader" id="loader">
+            <img src="/colorful-loader-gif-transparent.gif">
+        </div>
     </div>
+
+    <script src="generator.js">
+
+        
+    </script>
+
 </body>
 
 </html>
